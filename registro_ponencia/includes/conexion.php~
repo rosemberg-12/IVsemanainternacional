@@ -1,0 +1,9 @@
+﻿<?php
+
+// Constantes conexión con la base de datos
+define("server", 'localhost');
+define("user", 'root');
+define("pass", '1234');
+define("mainDataBase", 'ufps_25');
+
+?>

@@ -1,0 +1,149 @@
+<?php
+//Si la variable archivo que pasamos por URL no esta 
+//establecida acabamos la ejecucion del script.
+if (!isset($_GET['archivo']) || empty($_GET['archvo'])) {
+   exit();
+}
+
+//Utilizamos basename por seguridad, devuelve el 
+//nombre del archivo eliminando cualquier ruta. 
+$archivo = basename($_GET['archivo']);
+
+$ruta = 'imagenes/'.$archivo;
+
+if (is_file($ruta))
+{
+   header('Content-Type: application/force-download');
+   header('Content-Disposition: attachment; filename='.$archivo);
+   header('Content-Transfer-Encoding: binary');
+   header('Content-Length: '.filesize($ruta));
+
+   readfile($ruta);
+}
+else
+   exit();
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/img/ufps.ico">
+
+    <title>Vicerrectoria Asistente de Investigaci&oacute;n y Extensi&oacute;n</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href='assets/css/owl-carousel/owl.carousel.css' rel='stylesheet'>
+    <link href='assets/css/owl-carousel/owl.theme.css' rel='stylesheet'>
+    <link href='assets/css/owl-carousel/custom.css' rel='stylesheet'>
+    <link href='assets/css/owl-carousel/animate.css' rel='stylesheet'>
+    <link href="assets/css/charisma-app.css" rel="stylesheet">
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="assets/js/modernizr.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">IV SEMANA INTERNACIONAL Y XII SEMANA DE CIENCIA, TECNOLOG&Iacute;A E INNOVACI&Oacute;N</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">INICIO</a></li>
+          <li class="active"><a href="programacion.html">PROGRAMACI&Oacute;N</a></li>
+          <li><a href="ponencia.html">PONENCIAS</a></li>
+          <li><a href="registro_asistentes/index.php">ASISTENTES</a></li>
+            <li class="active"><a href="semilleros.html">CONVOCATORIA SEMILLEROS</a></li>
+            <li><a href="comite.html">COMIT&Eacute; CIENT&Iacute;FICO</a></li>
+            <li><a href="contacto.html">CONTACTO</a></li>
+            <li><a href="galeria.html">GALERIA</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">MEMORIAS<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="http://www.ufps.edu.co/Isemanainternacionalcyt/" target="_blank">2014</a></li>
+                <li><a href="http://www.ufps.edu.co/ufps/IIsemanainternacional_cyt/" target="_blank">2015</a></li>
+                <li><a href="https://ww2.ufps.edu.co/public/archivos/oferta_academica/76c4c5574aeacbb649c348dec13a663e.pdf" target="_blank">2016</a></li>
+              </ul>               
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+  <!-- *****************************************************************************************************************
+   BLUE WRAP
+   ***************************************************************************************************************** -->
+  <div id="blue">
+      <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3>Galería del Evento</h3>
+        </div>
+      </div> 
+      </div>  
+      <a href="descarga.php?archivo=imagen5.jpeg" >Descargar imagen</a>
+      <form method="post" action="accion.php" enctype="multipart/form-data">
+Ingresa el archivo:
+<input name="" type=".." />
+Número de Cedula: <input type="text" name="fname"><br>
+<a href="name" >Descargar imagen</a>
+      <h2><?= $archivo; ?></h2>
+
+      <form action="/action_page.php">
+  First name: <input type="text" name="fname"><br>
+  <input type="hidden" name="country" value="Norway">
+  <input type="submit" value="Submit">
+</form>
+  </div> 
+
+    <div class="container">
+     
+      <div class="row top">
+        <div class="col-sm-12">
+          <div class="cuerpo3" style="height: auto;">            
+
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#uno">
+                          <strong>07 de Noviembre de 2017</strong>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="uno" class="panel-collapse collapse">
+                      <html>
+<head><title>Ejemplo de tabla sencilla</title></head>
+<body>
